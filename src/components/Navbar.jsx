@@ -6,10 +6,14 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <div className="w-full h-auto border-b-[1px] border-[#ddd] bg-transparent ">
-      <div className="container flex items-center px-2 mx-auto lg:py-2 navbar">
+      <div className="container flex items-center px-2 py-5 mx-auto navbar">
         <div className="navbar-start">
+
+          <Link href={'/'}>
+            <Image width={120} height={120} src="/images/logo.svg" alt="logo"/>
+          </Link>
           
-          <Image width={120} height={120} src="/images/logo.svg" alt="logo"/>
+          
           
           <ul className="hidden gap-2 px-1 lg:flex">
             <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB] border-b-2"><Link  href={'/'}>Home</Link></li>

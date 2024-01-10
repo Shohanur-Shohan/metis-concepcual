@@ -3,20 +3,11 @@ import React from "react";
 const Blog = () => {
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* <img
-        className="absolute bottom-0 left-0 hidden -mb-24 sm:block"
-        src="saturn-assets/images/blog/blue-light-left.png"
-        alt=""
-      />
-      <img
-        className="absolute top-0 transform -translate-x-1/2 left-1/2"
-        src="saturn-assets/images/blog/orange-light-center.png"
-        alt=""
-      /> */}
+
       <div className="container relative px-4">
         <div className="max-w-lg mb-16 ">
-          <h2 className="mb-4 text-4xl font-bold font-heading">
-            Lorem ipsum dolor sit amet consectutar domor
+          <h2 className="mb-4 text-[2rem] md:text-4xl font-bold font-heading">
+          Make your  <span className="text-blue-600">life easier</span> for marketing sales & customer
           </h2>
           <p className="leading-loose text-gray-400">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus
@@ -24,10 +15,10 @@ const Blog = () => {
           </p>
         </div>
         <div className="grid grid-cols-12 gap-[30px]">
-          <div className="col-span-4 px-4 mb-8">
+          <div className="col-span-12 px-4 mb-[5rem] md:col-span-6 xl:col-span-4">
             <a className="relative block max-w-md mx-auto group" href="#">
               <div className="absolute bottom-0 left-0 w-full p-5">
-                <div className="p-5 transition ease-in-out delay-[4000ms] bg-white rounded-xl">
+                <div className="p-5  shadow-lg transition ease-in-out delay-[4000ms] bg-white rounded-xl mb-[-65px]">
                   <h4 className="text-xl font-semibold">
                     Consectures Content Velit officia consequat duis
                   </h4>
@@ -55,10 +46,11 @@ const Blog = () => {
               />
             </a>
           </div>
-          <div className="col-span-4 px-4 mb-8 xl">
+
+          <div className="col-span-12 px-4 mb-[5rem] md:col-span-6 xl:col-span-4">
             <a className="relative block max-w-md mx-auto group" href="#">
               <div className="absolute bottom-0 left-0 w-full p-5">
-                <div className="p-5 bg-white rounded-xl transition ease-in-out delay-[4000ms]">
+                <div className="p-5  shadow-lg bg-white rounded-xl transition ease-in-out delay-[4000ms] mb-[-65px]">
                   <h4 className="text-xl font-semibold">
                     Consectures Content Velit officia consequat duis
                   </h4>
@@ -86,10 +78,11 @@ const Blog = () => {
               />
             </a>
           </div>
-          <div className="col-span-4 px-4 mb-8">
+
+          <div className="col-span-12 px-4 mb-[5rem] md:col-span-6 xl:col-span-4">
             <a className="relative block max-w-md mx-auto group" href="#">
               <div className="absolute bottom-0 left-0 w-full p-5">
-                <div className="p-5 bg-white rounded-xl transition ease-in-out delay-[4000ms]">
+                <div className="p-5  shadow-lg bg-white rounded-xl transition ease-in-out delay-[4000ms] mb-[-65px]">
                   <h4 className="text-xl font-semibold">
                     Consectures Content Velit officia consequat duis
                   </h4>

@@ -44,6 +44,9 @@ module.exports = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
+    extend:{
+      myshadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    }
   },
   important: true,
   plugins: [
