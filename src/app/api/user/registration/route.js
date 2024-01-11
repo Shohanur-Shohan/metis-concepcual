@@ -12,9 +12,9 @@ export async function POST(req, res){
             data: reqBody,
         });
 
-        return NextResponse.json({status: "success",data: result });
+        return NextResponse.json({status: "Success",data: result });
     }
     catch(error){
-        return NextResponse.json({status: "failed",data: error.toString() });
+        return NextResponse.json({status: "Failed",data: error.toString() });
     }
 }

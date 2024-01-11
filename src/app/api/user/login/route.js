@@ -20,13 +20,13 @@ export async function POST(req, res){
             const cookieString = `token=${token}; expires=${expirationTime}; path=/`;
 
             return NextResponse.json(
-                {status: "success",data: token },
+                {status: "Success",data: token },
                 {status:200, headers:{'set-cookie': cookieString}}
             );
         }
 
     }
     catch(error){
-        return NextResponse.json({status: "failed",data: error.toString() });
+        return NextResponse.json({status: "Failed",data: error.toString() });
     }
 }
