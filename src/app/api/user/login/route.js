@@ -13,7 +13,7 @@ export async function POST(req, res){
         });
 
         if(result.length===0){
-            return NextResponse.json({status: "failed",data: result });
+            return NextResponse.json({status: "Failed",data: result });
         }else{
             let token = await CreateToken(result['email'], result['id']);
             const expirationTime = new Date(Date.now() + 24 * 60 * 60 * 1000);

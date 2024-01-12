@@ -5,7 +5,8 @@ export async function CreateToken(email, id){
     let token = await new SignJWT({email: email, id: id})
         .setProtectedHeader({alg: 'HS256'})
         .setIssuedAt()
-        .setIssuer(process.env.JWT_ISSUER) .setExpirationTime(process.env.JWT_EXPIRATION)
+        .setIssuer(process.env.JWT_ISSUER) 
+        .setExpirationTime(process.env.JWT_EXPIRATION)
         .sign(secret);
     return token;
 }
