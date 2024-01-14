@@ -38,3 +38,13 @@ model blog {
   createdAt   DateTime @default(now()) @db.Timestamp(0)
   updatedAt   DateTime @default(now()) @db.Timestamp(0) @updatedAt
 }
+
+model member {
+  id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(100)
+  role        String  @db.VarChar(100)
+
+
+  createdAt   DateTime @default(now()) @db.Timestamp(0)
+  updatedAt   DateTime @default(now()) @db.Timestamp(0) @updatedAt
+}
