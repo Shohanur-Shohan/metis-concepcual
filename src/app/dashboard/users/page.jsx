@@ -1,11 +1,24 @@
+
 import UsersListsDashboard from "@/components/admin/UsersListsDashboard";
+import { PrismaClient } from "@prisma/client";
 
-const page = () => {
 
+async function getData(){
+    const prisma = new PrismaClient();
+    const result = await prisma.user.findMany({
+        orderBy: {id : 'asc'},
+    });
+    return result;
+}
+
+const page = async () => {
+
+    const data = await getData()
+    // console.log(data);
 
     return (
         <div>
-            <UsersListsDashboard/>
+            <UsersListsDashboard data={data}/>
         </div>
     );
 };
