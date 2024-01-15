@@ -42,6 +42,7 @@ model blog {
 model member {
   id          Int     @id @default(autoincrement())
   name        String  @db.VarChar(100)
+  imgCDN      String  @db.VarChar(300)
   role        String  @db.VarChar(100)
 
 
