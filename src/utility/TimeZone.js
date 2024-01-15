@@ -1,7 +1,8 @@
-// export default function(){
+                 
+export default function RemoveTimezone(props){
+    
+    let withTimeZone = new Date(props);
+    let withoutTimeZone = withTimeZone.toLocaleDateString();
 
-//     const createdAtDate = new Date(user.createdAt);
-//     const createdAtWithoutTimezone = createdAtDate.toLocaleDateString();
-//     return createdAtWithoutTimezone;
-
-// }
+    return withoutTimeZone;
+}
