@@ -13,7 +13,7 @@ async function getData(){
 
 const page = async () => {
 
-    const data = await getData()
+    const data = await getData();
     // console.log(data);
 
     return (
