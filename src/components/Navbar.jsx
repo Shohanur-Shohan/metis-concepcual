@@ -20,8 +20,7 @@ const NavBar = () => {
             <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/about'}>About</Link></li>
             <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/services'}>Services</Link></li>
             <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/blog'}>Blog</Link></li>
-            <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/contact'}>Contact</Link></li> 
-            <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/dashboard'}>Dashboard</Link></li>           
+            <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/contact'}>Contact</Link></li>            
           </ul>
         </div>
 
@@ -39,11 +38,14 @@ const NavBar = () => {
               <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/about'}>About</Link></li>
               <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/services'}>Services</Link></li>
               <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/blog'}>Blog</Link></li>
-              <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/contact'}>Contact</Link></li> 
-              <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/dashboard'}>Dashboard</Link></li> 
+              <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/contact'}>Contact</Link></li>  
 
               <Link href={'/login'} className="lg:hidden px-8 py-2 mb-2 text-center justify-center flex border-2 bg-transparent border-[#1A56DB] font-medium hover:bg-[#1A56DB] hover:text-white rounded-lg">Login</Link>
               <Link href={'/signup'} className="lg:hidden px-8 py-2 mb-2 flex text-center justify-center border-2 bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link>
+
+              {/* 
+              <Link href={'/signup'} className="lg:hidden px-8 py-2 mb-2 flex text-center justify-center border-2 bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link>
+              */}
 
             </ul>           
           </div>

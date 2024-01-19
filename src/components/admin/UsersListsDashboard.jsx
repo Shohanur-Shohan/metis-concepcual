@@ -26,7 +26,7 @@ const UsersListsDashboard = async (props) => {
                     <p className="block font-sans text-sm antialiased font-semibold leading-none text-blue-gray-900 opacity-70">Email</p>
                     </th>
                     <th className="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
-                    <p className="block font-sans text-sm antialiased font-semibold leading-none text-blue-gray-900 opacity-70">Authenticity</p>
+                    <p className="block font-sans text-sm antialiased font-semibold leading-none text-blue-gray-900 opacity-70">Password</p>
                     </th>
                     <th className="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
                     <p className="block font-sans text-sm antialiased font-semibold leading-none text-blue-gray-900 opacity-70">Joined</p>
@@ -68,8 +68,8 @@ const UsersListsDashboard = async (props) => {
                             </td>
                             <td className="p-4 border-b border-blue-gray-50">
                                 <div className="w-max">
-                                    <div className="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20" >
-                                    <span className="">Verified</span>
+                                    <div className="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 rounded-md select-none whitespace-nowrap bg-green-500/20" >
+                                    <span className="">{item?.password}</span>
                                     </div>
                                 </div>
                             </td>
