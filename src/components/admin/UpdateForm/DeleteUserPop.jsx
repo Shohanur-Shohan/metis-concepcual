@@ -17,7 +17,7 @@ const DeleteUserPop = (props) => {
                 ErrorToast("Something went wrong");
             }
         } catch (error) {
-            console.error("Error deleting user:", error);
+            console.log("Error deleting user:", error);
             ErrorToast("Something went wrong");
         }
     }
