@@ -1,7 +1,7 @@
 import RemoveTimezone from "@/utility/Timezone";
 import Image from "next/image";
-import UpdateMember from "./UpdateForm/UpdateMember";
-import DeleteMember from "./UpdateForm/DeleteMember";
+import UpdateMemberPop from "./UpdateForm/UpdateMemberPop";
+import DeleteMemberPop from "./UpdateForm/DeleteMemberPop";
 
 
 const DashboardTeamMembers = (props) => {
@@ -77,7 +77,7 @@ const DashboardTeamMembers = (props) => {
                                             </label>
                                             
                                             <ul tabIndex={0} className="dropdown-content mt-3 z-[1] px-6 py-10 shadow bg-base-100 rounded-box md:w-[500px] w-[360px] mr-[50px] ">
-                                                <UpdateMember />
+                                                <UpdateMemberPop />
                                             </ul>
                                         </div>
                                         {/* popup */}
@@ -92,7 +92,7 @@ const DashboardTeamMembers = (props) => {
                                             </label>
                                             
                                             <ul tabIndex={0} className="dropdown-content mt-3 z-[1] px-6 py-10 shadow bg-base-100 rounded-box md:w-[500px] w-[360px] mr-[50px] ">
-                                                <DeleteMember />
+                                                <DeleteMemberPop />
                                             </ul>
                                         </div>
                                         {/*delete popup */}

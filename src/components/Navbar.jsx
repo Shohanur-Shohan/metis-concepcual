@@ -1,9 +1,25 @@
-
+'use server'
 import Image from "next/image";
 import Link from "next/link";
+import { cookies } from 'next/headers';
+// import { setCookie, deleteCookie, hasCookie, getCookie, getCookies } from 'cookies-next';
+
 
 
 const NavBar = () => {
+
+
+  //after-before-token 1
+  const cookieStore = cookies();
+  const token = cookieStore.get("token");
+  let tokenValue = token?.value;
+
+  // console.log(tokenValue);
+
+
+  
+
+
   return (
     <div className="w-full h-auto border-b-[1px] border-[#ddd] bg-transparent ">
       <div className="container flex items-center px-2 py-5 mx-auto navbar">
@@ -13,7 +29,7 @@ const NavBar = () => {
             <Image width={120} height={120} src="/images/logo.svg" alt="logo"/>
           </Link>
           
-          
+
           
           <ul className="hidden gap-2 px-1 lg:flex">
             <li  className="font-medium ml-8 text-[14px] border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB] border-b-2"><Link  href={'/'}>Home</Link></li>
@@ -25,9 +41,25 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-end">
+
+          {/* desktop */}
+
+          {
+              
+              tokenValue ? <Link href={'/dashboard'} className="hidden ml-3 px-8 py-3 lg:flex border-[1px] bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-semibold  uppercase">Dashboard</Link>
+              
+
+              :
+
+              <div className="flex">
+                <Link href={'/login'} className="hidden ml-3 px-8 py-2 lg:flex border-[1px] bg-transparent transition delay-4000 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white rounded-lg font-medium">Login</Link>
+                <Link href={'/signup'} className="hidden ml-3 px-8 py-2 lg:flex border-[1px] bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link>             
+              </div>
+            
+            }
           
-          <Link href={'/login'} className="hidden ml-3 px-8 py-2 lg:flex border-[1px] bg-transparent transition delay-4000 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white rounded-lg font-medium">Login</Link>
-          <Link href={'/signup'} className="hidden ml-3 px-8 py-2 lg:flex border-[1px] bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link>
+          {/* <Link href={'/login'} className="hidden ml-3 px-8 py-2 lg:flex border-[1px] bg-transparent transition delay-4000 border-[#1A56DB] text-[#1A56DB] hover:bg-[#1A56DB] hover:text-white rounded-lg font-medium">Login</Link>
+          <Link href={'/signup'} className="hidden ml-3 px-8 py-2 lg:flex border-[1px] bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link> */}
           
           <div className="dropdown">
             <label tabIndex={0} className="bg-transparent btn border-2 border-transparent hover:border-[#1A56DB] hover:bg-transparent lg:hidden">
@@ -40,12 +72,21 @@ const NavBar = () => {
               <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/blog'}>Blog</Link></li>
               <li  className="font-medium text-[14px] mb-2  border-transparent transition delay-4000 hover:text-[#1A56DB] hover:border-[#1A56DB]  border-b-2"><Link href={'/contact'}>Contact</Link></li>  
 
-              <Link href={'/login'} className="lg:hidden px-8 py-2 mb-2 text-center justify-center flex border-2 bg-transparent border-[#1A56DB] font-medium hover:bg-[#1A56DB] hover:text-white rounded-lg">Login</Link>
-              <Link href={'/signup'} className="lg:hidden px-8 py-2 mb-2 flex text-center justify-center border-2 bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link>
 
-              {/* 
-              <Link href={'/signup'} className="lg:hidden px-8 py-2 mb-2 flex text-center justify-center border-2 bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link>
-              */}
+              {/* mobile  */}
+              {
+              
+              tokenValue ? 
+              <Link href={'/dashboard'} className="lg:hidden px-8 py-2 mb-2 flex text-center justify-center border-2 bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Dashboard</Link>
+
+              :
+
+              <div>
+                <Link href={'/login'} className="lg:hidden px-8 py-2 mb-2 text-center justify-center flex border-2 bg-transparent border-[#1A56DB] font-medium hover:bg-[#1A56DB] hover:text-white rounded-lg">Login</Link>
+                <Link href={'/signup'} className="lg:hidden px-8 py-2 mb-2 flex text-center justify-center border-2 bg-[#1A56DB] transition delay-4000 border-[#1A56DB] text-white hover:bg-transparent hover:text-[#1A56DB] rounded-lg font-medium">Sign up</Link>              
+              </div>
+            
+              }
 
             </ul>           
           </div>

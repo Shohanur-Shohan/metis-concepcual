@@ -28,12 +28,12 @@ const Hero = () => {
                             >
                             Check Now
                             </a>
-                            <a
+                            {/* <a
                             className="px-8 py-3 mb-2 text-center  border-2 bg-transparent border-[#1A56DB] font-medium hover:bg-[#1A56DB] hover:text-white rounded-lg"
                             href="#"
                             >
                             Learn More
-                            </a>
+                            </a> */}
                             
                         </div>
                     </div>

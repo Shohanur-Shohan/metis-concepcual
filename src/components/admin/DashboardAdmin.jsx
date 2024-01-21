@@ -3,9 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+// for cookie delete
+import { useRouter } from 'next/navigation';
+import Cookies from "js-cookie";
+
 export default function DashboardAdmin  (props)  {
 
     const [open, setOpen] = useState(false);
+    const router = useRouter();
+
+// for cookie delete
+    const handleLogout = () =>{
+        Cookies.remove('token');
+
+        router.push('/login');
+    }
 
     return (
 
@@ -58,7 +70,7 @@ export default function DashboardAdmin  (props)  {
                                     </a>
                                     </li>
                                     <li><a>Settings</a></li>
-                                    <li><a>Logout</a></li>
+                                    <li onClick={handleLogout}><a>Logout</a></li>
                                 </ul>
                             </div>
                             {/* profile end */}
@@ -128,10 +140,10 @@ export default function DashboardAdmin  (props)  {
                             {/* LINE */}
                             <div className="pt-2 space-y-2">
                                 <li className="list-none">
-                                    <Link href={'/'} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group ">
+                                    <button onClick={handleLogout} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group ">
                                         <svg xmlns="http://www.w3.org/2000/svg"  className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900" viewBox="0 0 458.125 458.125"><g><g fillRule="evenodd" clipRule="evenodd"><path fill="#1976d2" d="M210.991.001c-59.383 0-107.521 48.138-107.521 107.52S151.608 215.04 210.991 215.04c59.382 0 107.52-48.138 107.52-107.519 0-59.382-48.138-107.52-107.52-107.52z"></path><path fill="#f44336" d="M345.07 212.48c16.261 0 30.872 7.15 40.825 18.426 5.614 6.359 5.007 16.067-1.352 21.68-6.361 5.614-16.067 5.007-21.68-1.352-4.368-4.95-10.711-8.034-17.793-8.034h-39.078c-13.097 0-23.716 10.619-23.716 23.718v136.77c0 13.099 10.619 23.718 23.716 23.718h39.078c7.082 0 13.425-3.084 17.793-8.034 5.614-6.359 15.319-6.965 21.68-1.352 6.359 5.614 6.965 15.321 1.352 21.68-9.953 11.276-24.564 18.426-40.825 18.426h-39.078c-30.065 0-54.436-24.371-54.436-54.438v-136.77c0-30.065 24.371-54.438 54.436-54.438zm58.12 174.641 40.96-40.96c5.997-5.999 5.997-15.722 0-21.721l-40.96-40.96c-5.999-5.999-15.725-5.999-21.723 0s-5.999 15.723 0 21.721l14.739 14.739h-75.559c-8.483 0-15.36 6.877-15.36 15.36s6.877 15.36 15.36 15.36h75.559l-14.739 14.74c-5.999 5.999-5.999 15.723 0 21.721s15.724 5.999 21.723 0z"></path></g><path fill="#1976d2" d="M221.147 259.586a85.906 85.906 0 0 0-.311 7.332v136.77c0 15.274 4.02 29.608 11.061 42.002H45.318c-19.794 0-35.84-16.046-35.84-35.84v-75.201a33.949 33.949 0 0 1 18.018-29.979c60.429-32.112 127.245-47.14 193.651-45.084z"></path><g fillRule="evenodd" clipRule="evenodd"><path fill="#1976d2" d="M210.756 259.404V445.69H45.318c-19.794 0-35.84-16.046-35.84-35.84v-75.201a33.949 33.949 0 0 1 18.018-29.979 386.942 386.942 0 0 1 183.26-45.266zm0-259.404v215.04c-59.382 0-107.52-48.138-107.52-107.519C103.235 48.139 151.374.001 210.756 0z"></path><path fill="#cc382d" d="M305.287 335.303h143.36c0 3.93-1.499 7.86-4.497 10.858l-40.96 40.96c-5.999 5.999-15.725 5.999-21.723 0s-5.999-15.723 0-21.721l14.739-14.739h-75.559c-8.48 0-15.358-6.876-15.36-15.358zm-23.011 0v68.385c0 13.099 10.619 23.718 23.716 23.718h39.078c7.082 0 13.425-3.084 17.793-8.034 5.614-6.359 15.319-6.965 21.68-1.352 6.359 5.614 6.965 15.321 1.352 21.68-9.953 11.276-24.564 18.426-40.825 18.426h-39.078c-30.065 0-54.436-24.371-54.436-54.438v-68.385z"></path></g></g></svg>
                                         <span className="flex-1 ml-3 whitespace-nowrap">Log Out</span>
-                                    </Link>
+                                    </button>
                                 </li>
                             </div>
                         </div>

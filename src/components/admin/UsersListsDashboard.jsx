@@ -1,13 +1,13 @@
 
 import Image from "next/image";
-import DeleteUser from "./UpdateForm/DeleteUser";
+import DeleteUserPop from "./UpdateForm/DeleteUserPop";
 import UserUpdatePopup from "./UpdateForm/UserUpdatePopup";
 
 const UsersListsDashboard = async (props) => {
 
+
     const userData = await props.data;
     // console.log(userData);
-    // console.log("userData");
 
     return (
 
@@ -109,7 +109,7 @@ const UsersListsDashboard = async (props) => {
                                 </label>
                                 
                                 <ul tabIndex={0} className="dropdown-content mt-3 z-[1] px-6 py-10 shadow bg-base-100 rounded-box md:w-[500px] w-[360px] mr-[50px] ">
-                                    <DeleteUser/>
+                                    <DeleteUserPop data={item?.id}/>
                                 </ul>
                             </div>
                             {/*delete popup */}

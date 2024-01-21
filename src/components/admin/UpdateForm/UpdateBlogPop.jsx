@@ -1,5 +1,5 @@
 
-const UpdateMember = () => {
+const UpdateBlogPop = () => {
 
     return (
         <div>
@@ -49,4 +49,4 @@ const UpdateMember = () => {
     );
 };
 
-export default UpdateMember;
+export default UpdateBlogPop;

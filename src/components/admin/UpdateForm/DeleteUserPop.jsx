@@ -1,10 +1,34 @@
+"use client"
+import { ErrorToast, SuccessToast } from "@/utility/FormHelper";
+import axios from "axios";
+import { Toaster } from "react-hot-toast";
 
-const DeleteMember = () => {
+const DeleteUserPop = (props) => {
+
+    const userID = props?.data;
+    // console.log(userID);
+
+    const handleDeleteUser = async (ID) => {
+        try {
+            let res = await axios.delete(`/api/user/delete?id=${ID}`);
+            if(res?.status == 200) {
+                SuccessToast("User Deleted");
+            } else {
+                ErrorToast("Something went wrong");
+            }
+        } catch (error) {
+            console.error("Error deleting user:", error);
+            ErrorToast("Something went wrong");
+        }
+    }
+    
+
 
     return (
         <div>
              {/* <!-- Form --> */}
-            <form >
+                <Toaster position='top center' reverseOrder={false}/>
+
                 <div className="mb-3 text-center">
                     {/* icon */}
                     <div className="flex justify-center pb-8">
@@ -16,12 +40,11 @@ const DeleteMember = () => {
                     <p className="block pb-5 text-gray-800 text-md dark:text-white">This will be permanently deleted!</p>
                 </div>
                 <div className="grid gap-y-4">
-                    <button className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white uppercase bg-red-600 border border-transparent rounded-lg gap-x-2 hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Delete</button>
+                    <button onClick={()=>handleDeleteUser(userID)} className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white uppercase bg-red-600 border border-transparent rounded-lg gap-x-2 hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Delete</button>
                 </div>
-            </form>
             {/* <!-- End Form --> */}
         </div>
     );
 };
 
-export default DeleteMember;
+export default DeleteUserPop;
