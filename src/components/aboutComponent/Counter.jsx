@@ -15,9 +15,7 @@ const Counter = () => {
             <p className="my-1 text-3xl font-bold lg:text-4xl font-heading">
               $33,261
             </p>
-            <span className="text-xs lg:text-base text-blueGray-500">
-              432 Orders
-            </span>
+            
           </div>
           <div className="w-full px-4 py-6 text-center border-b sm:w-1/2 lg:w-1/4 lg:border-b-0 md:border-r">
             <p className="text-md lg:text-base text-blueGray-400">
@@ -29,9 +27,7 @@ const Counter = () => {
             <p className="my-1 text-3xl font-bold lg:text-4xl font-heading">
               643,533
             </p>
-            <span className="text-xs lg:text-base text-blueGray-500">
-              $50 Avg. Order
-            </span>
+            
           </div>
           <div className="w-full px-4 py-6 text-center border-b sm:w-1/2 lg:w-1/4 md:border-b-0 md:border-r">
             <p className="text-md lg:text-base text-blueGray-400">
@@ -43,9 +39,7 @@ const Counter = () => {
             <p className="my-1 text-3xl font-bold lg:text-4xl font-heading">
               643,533
             </p>
-            <span className="text-xs lg:text-base text-blueGray-500">
-              5m 25s Avg. Response Time
-            </span>
+            
           </div>
           <div className="w-full px-4 py-6 text-center sm:w-1/2 lg:w-1/4">
             <p className="text-md lg:text-base text-blueGray-400">
@@ -57,9 +51,7 @@ const Counter = () => {
             <p className="my-1 text-3xl font-bold lg:text-4xl font-heading">
               25%
             </p>
-            <span className="text-xs lg:text-base text-blueGray-500">
-              5% Sales Rate
-            </span>
+            
           </div>
         </div>
       </div>

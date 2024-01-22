@@ -10,11 +10,10 @@ const Price = () => {
       <div className="container px-4 mx-auto">
         <div className="mb-16 text-center">
           <h2 className="max-w-lg mx-auto mb-4 text-4xl font-bold font-heading">
-            <span>Start saving time today and</span>
             <span className="text-blue-600">choose</span>
             <span>your best plan</span>
           </h2>
-          <p className="max-w-sm mx-auto text-lg text-gray-400">
+          <p className="max-w-sm mx-auto text-[14px] text-gray-400">
             Best for freelance developers who need to save their time
           </p>
         </div>

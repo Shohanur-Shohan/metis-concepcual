@@ -6,13 +6,9 @@ const Cards = () => {
         <div className="py-14 md:py-[100px] w-full bg-[#F9FAFB]">
             <div className="container px-2 mx-auto">
                 {/* content */}          
-                <div className="grid items-center gap-3 sm:grid-cols-2 lg:grid-cols-2 sm:gap-4 lg:gap-[10rem] md:gap-[5rem] lg:justify-between">
+                <div className="text-center">
                     <div className="py-[50px]">
-                        <h1 className="mb-4 text-3xl font-bold md:text-4xl">Make your <span className="text-[#2563EB] mb-4 text-3xl font-bold md:text-4xl">life easier </span>for marketing sales & customer </h1>
-
-                    </div>
-                    <div>
-                        <p className="mb-[50px] lg:mb-[0px] text-sm md:text-md">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam natus excepturi quas hic similique voluptatem quasi recusandae asperiores, tempore molestiae dolor laboriosam soluta esse magnam culpa ut odio omnis perferendis!</p>
+                        <h1 className="mb-4 text-3xl font-bold md:text-4xl">Make your <span className="text-[#2563EB] mb-4 text-3xl font-bold md:text-4xl">life easier </span><br></br>for marketing sales & customer </h1>
                     </div>
                 </div>
                 {/* <!-- Grid --> */}

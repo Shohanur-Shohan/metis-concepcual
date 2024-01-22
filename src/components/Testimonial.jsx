@@ -5,9 +5,11 @@ const Testimonial = () => {
         
         <div className="py-16">
         <div className="px-6 m-auto text-gray-600 xl:container dark:text-gray-300 md:px-12 xl:px-6">
-          <h2 className="mb-12 text-2xl font-bold text-center text-gray-800 dark:text-white md:text-4xl">
-            Whats our customers say
-          </h2>
+        <div className="text-center">
+                <div className="py-[50px]">
+                    <h1 className="mb-4 text-3xl font-bold md:text-4xl">What <span className="text-[#2563EB] mb-4 text-3xl font-bold md:text-4xl">Our Clients </span>Say</h1>
+                </div>
+            </div>
           <div className="grid gap-8 md:grid-rows-2 lg:grid-cols-2">
             <div
               className="row-span-2 p-8 text-center border border-gray-100 shadow-2xl rounded-3xl dark:border-gray-700 bg-gray-50 dark:bg-gray-800 shadow-gray-600/10 dark:shadow-none"
