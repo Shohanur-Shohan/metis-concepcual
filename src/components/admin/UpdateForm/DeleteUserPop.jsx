@@ -13,6 +13,7 @@ const DeleteUserPop = (props) => {
             let res = await axios.delete(`/api/user/delete?id=${ID}`);
             if(res?.status == 200) {
                 SuccessToast("User Deleted");
+                window.location.reload();
             } else {
                 ErrorToast("Something went wrong");
             }

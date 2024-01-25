@@ -6,13 +6,13 @@ export async function DELETE(req, res){
 
     try{
         const {searchParams} = new URL(req.url);
-        const serviceID = searchParams.get('id');
+        const memberID = searchParams.get('id');
 
         // let reqBody = await req.json();
         const prisma = new PrismaClient();
 
         const result = await prisma.member.delete({
-            where: {id: parseInt(serviceID)},
+            where: {id: parseInt(memberID)},
         });
 
         return NextResponse.json({status: "success", data: result});
