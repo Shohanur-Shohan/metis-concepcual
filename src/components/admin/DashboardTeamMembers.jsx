@@ -77,7 +77,7 @@ const DashboardTeamMembers = (props) => {
                                             </label>
                                             
                                             <ul tabIndex={0} className="dropdown-content mt-3 z-[1] px-6 py-10 shadow bg-base-100 rounded-box md:w-[500px] w-[360px] mr-[50px] ">
-                                                <UpdateMemberPop />
+                                                <UpdateMemberPop data={item?.id}/>
                                             </ul>
                                         </div>
                                         {/* popup */}
@@ -92,7 +92,7 @@ const DashboardTeamMembers = (props) => {
                                             </label>
                                             
                                             <ul tabIndex={0} className="dropdown-content mt-3 z-[1] px-6 py-10 shadow bg-base-100 rounded-box md:w-[500px] w-[360px] mr-[50px] ">
-                                                <DeleteMemberPop />
+                                                <DeleteMemberPop  data={item?.id}/>
                                             </ul>
                                         </div>
                                         {/*delete popup */}
@@ -110,9 +110,6 @@ const DashboardTeamMembers = (props) => {
                     </table>
                 </div>           
             </div>
-            {/* <div className="w-full max-w-md p-6 py-10 mx-auto bg-[#fff] rounded-lg ">
-               <UpdateMember/> 
-            </div> */}
             
         </div>
         
