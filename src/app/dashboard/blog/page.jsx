@@ -1,11 +1,11 @@
 import AddBlog from "@/components/admin/AddBlog";
-import DashboardBlogs from "@/components/admin/DashboardBlogs";
+import DashboardAllBlogs from "@/components/admin/DashboardAllBlogs";
 
 const page = () => {
     return (
         <div>
             <AddBlog/>
-            <DashboardBlogs/>
+            <DashboardAllBlogs/>
         </div>
     );
 };

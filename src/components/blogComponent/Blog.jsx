@@ -47,21 +47,23 @@ const Blog = () => {
 
 
         <div className="grid grid-cols-12 gap-[30px]">
-          <Suspense fallback={<BlogSkeleton />}>
+          {/* <Suspense fallback={<BlogSkeleton />}> */}
 
             {
 
             blogs?.data.map((item, id)=>{
 
             return(
-              <BlogPost key={id} item={item}/>
-              
+
+              <Suspense key={id}  fallback={<BlogSkeleton />}>
+                <BlogPost key={id} item={item}/>
+              </Suspense>
             )
 
             })
 
             }
-          </Suspense>
+          {/* </Suspense> */}
         </div>
         
         {/* <BlogSkeleton/> */}
