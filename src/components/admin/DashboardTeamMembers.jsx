@@ -1,4 +1,4 @@
-import RemoveTimezone from "@/utility/Timezone";
+// import RemoveTimezone from "@/utility/Timezone";
 import Image from "next/image";
 import UpdateMemberPop from "./UpdateForm/UpdateMemberPop";
 import DeleteMemberPop from "./UpdateForm/DeleteMemberPop";
@@ -40,7 +40,10 @@ const DashboardTeamMembers = (props) => {
 
                                 //remove timezone
                                 let createdAt = item?.createdAt;                   
-                                let romoveTimeZone = RemoveTimezone(createdAt);
+                                // let romoveTimeZone = RemoveTimezone(createdAt);
+                                let withTimeZone = new Date(createdAt);
+                                let withoutTimeZone = withTimeZone.toLocaleDateString();
+
                             
                             return (
 
@@ -59,7 +62,7 @@ const DashboardTeamMembers = (props) => {
                                         <td className="p-4 border-b border-blue-gray-50">
                                         <div className="flex items-center gap-3">
                                             <div className="flex flex-col">
-                                            <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">{romoveTimeZone}</p>
+                                            <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">{withoutTimeZone}</p>
                                             </div>
                                         </div>
                                     </td>
