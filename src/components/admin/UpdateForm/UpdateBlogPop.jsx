@@ -25,6 +25,9 @@ const UpdateBlogPop = ({item}) => {
         else if( IsEmpty(des)){
             ErrorToast("Enter blog description");
         }
+        else if( des.length >= 4999 ){
+            ErrorToast("Description must be under 5000 characters!")
+        }
         else{
             let res = await axios.post(`/api/dashboard/blog/update?id=${blogID}`, {title, imgCDN, des});
 

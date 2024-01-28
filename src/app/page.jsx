@@ -7,6 +7,8 @@ import NavBar from "@/components/Navbar";
 import Newsletter from "@/components/Newsletter";
 import PreviousClient from "@/components/PreviousClient";
 import Testimonial from "@/components/Testimonial";
+import AboutInfo from "@/components/aboutComponent/AboutInfo";
+import Counter from "@/components/aboutComponent/Counter";
 
 export default function Home() {
   
@@ -17,6 +19,8 @@ export default function Home() {
       <Hero/>
       <Category/>
       {/* <Developer/> */}
+      <AboutInfo/>
+      <Counter/>
       <PreviousClient/>
       <Cards/>
       <Testimonial/>
