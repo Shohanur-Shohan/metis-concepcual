@@ -26,7 +26,7 @@ const DashboardServices = () => {
 
     return (
     <div className='flex justify-center h-[fit-content] pt-10'>
-        <div className="container p-6 px-0 overflow-x-scroll overflow-y-hidden md:overflow-hidden">
+        <div className="container p-6 px-0 pb-[1000px] overflow-x-scroll overflow-y-hidden md:overflow-hidden">
             <table className="w-full text-left table-auto border-[1px] border-gray-100">
                 <thead >
                 <tr className="">
@@ -46,10 +46,10 @@ const DashboardServices = () => {
                 </thead>
                 <tbody >
                     {
-                        service?.data.map((service, id)=>{
+                        service?.data.map((item, id)=>{
                         
                         return(
-                            <DashboardServiceCard key={id} service={service}/>
+                            <DashboardServiceCard key={id} item={item}/>
                         )
                         })
                     }

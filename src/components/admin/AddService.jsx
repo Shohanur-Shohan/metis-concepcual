@@ -17,7 +17,7 @@ const AddService = () => {
 
 
       if( IsEmpty(title) ){
-          ErrorToast("Please add blog title!");
+          ErrorToast("Please add service title!");
       }
       else if( IsEmpty(imgCDN) ){
           ErrorToast("Please add image cdn link!");
@@ -28,7 +28,7 @@ const AddService = () => {
       else{
           let res = await axios.post("/api/dashboard/service/create", {title, imgCDN});
           if(res.data.status === "success"){
-              SuccessToast("Blog Created Successfully");
+              SuccessToast("Service Created Successfully");
               window.location.reload();
           }
           else{
