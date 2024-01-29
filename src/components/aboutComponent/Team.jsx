@@ -3,6 +3,8 @@ import axios from "axios";
 import { Suspense, useEffect, useState } from "react";
 import MemberCard from "./MemberCard";
 import MemberSkeleton from "./MemberSkeleton";
+import { revalidatePath } from 'next/cache'
+
 
 
 const Team = () => {
@@ -17,6 +19,7 @@ const Team = () => {
       let res = await axios.get("/api/dashboard/member/all");
       setMember(res?.data);
       // console.log(res?.data);
+      revalidatePath('/about')
     } catch (error) {
       console.log("Error fetching member", error.toString());
     }

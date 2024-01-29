@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Suspense } from "react";
 import BlogPost from "./BlogPost";
 import BlogSkeleton from "./BlogSkeleton";
+import { revalidatePath } from 'next/cache'
 
 const Blog = () => {
 
@@ -19,6 +20,8 @@ const Blog = () => {
       let res = await axios.get("/api/dashboard/blog/all");
       // console.log(res);
       setBlogs(res?.data);
+      revalidatePath('/blog')
+
     } catch (error) {
       console.log("blog fetch error", error);
     } 

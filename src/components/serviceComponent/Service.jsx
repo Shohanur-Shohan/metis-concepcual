@@ -3,6 +3,8 @@ import { Suspense, useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
 import BlogSkeleton from "../blogComponent/BlogSkeleton";
 import axios from "axios";
+import { revalidatePath } from 'next/cache'
+
 
 const Service = () => {
 
@@ -17,6 +19,8 @@ const Service = () => {
       let res = await axios.get("/api/dashboard/service/all");
       // console.log(res);
       setService(res?.data);
+      revalidatePath('/services')
+
     } catch (error) {
       console.log("blog fetch error", error);
     } 
