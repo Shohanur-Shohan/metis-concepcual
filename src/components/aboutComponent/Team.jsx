@@ -19,7 +19,6 @@ const Team = () => {
       let res = await axios.get("/api/dashboard/member/all");
       setMember(res?.data);
       // console.log(res?.data);
-      revalidatePath('/about')
     } catch (error) {
       console.log("Error fetching member", error.toString());
     }
@@ -28,6 +27,8 @@ const Team = () => {
   } )()
 
   }, [])
+  revalidatePath('/about')
+
 
   // console.log(member);
   // console.log(member?.status);

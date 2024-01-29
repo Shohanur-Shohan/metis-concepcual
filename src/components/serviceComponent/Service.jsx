@@ -19,8 +19,6 @@ const Service = () => {
       let res = await axios.get("/api/dashboard/service/all");
       // console.log(res);
       setService(res?.data);
-      revalidatePath('/services')
-
     } catch (error) {
       console.log("blog fetch error", error);
     } 
@@ -28,6 +26,8 @@ const Service = () => {
   })()
 
   }, []);
+  revalidatePath('/services')
+
 
   return (
     <section className="pt-20">

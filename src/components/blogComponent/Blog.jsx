@@ -20,7 +20,6 @@ const Blog = () => {
       let res = await axios.get("/api/dashboard/blog/all");
       // console.log(res);
       setBlogs(res?.data);
-      revalidatePath('/blog')
 
     } catch (error) {
       console.log("blog fetch error", error);
@@ -30,6 +29,8 @@ const Blog = () => {
 
   }, []);
   // console.log(blogs);
+  revalidatePath('/blog')
+
   
   
 
