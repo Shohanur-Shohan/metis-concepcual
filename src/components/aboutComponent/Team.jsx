@@ -3,7 +3,6 @@ import axios from "axios";
 import { Suspense, useEffect, useState } from "react";
 import MemberCard from "./MemberCard";
 import MemberSkeleton from "./MemberSkeleton";
-import { revalidatePath } from 'next/cache'
 
 
 
@@ -16,7 +15,7 @@ const Team = () => {
   (async ()=>{
   
     try {
-      let res = await axios.get("/api/dashboard/member/all");
+      let res = await axios.get("/api/dashboard/member/all", { cache: 'no-store' });
       setMember(res?.data);
       // console.log(res?.data);
     } catch (error) {
@@ -27,7 +26,6 @@ const Team = () => {
   } )()
 
   }, [])
-  revalidatePath('/about')
 
 
   // console.log(member);

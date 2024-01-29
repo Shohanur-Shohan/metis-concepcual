@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { Suspense } from "react";
 import BlogPost from "./BlogPost";
 import BlogSkeleton from "./BlogSkeleton";
-import { revalidatePath } from 'next/cache'
 
 const Blog = () => {
 
@@ -17,7 +16,7 @@ const Blog = () => {
   (async ()=>{
   
     try {
-      let res = await axios.get("/api/dashboard/blog/all");
+      let res = await axios.get("/api/dashboard/blog/all", { cache: 'no-store' });
       // console.log(res);
       setBlogs(res?.data);
 
@@ -29,9 +28,7 @@ const Blog = () => {
 
   }, []);
   // console.log(blogs);
-  revalidatePath('/blog')
-
-  
+  // export const revalidate = 0;
   
 
   return (
@@ -51,7 +48,6 @@ const Blog = () => {
 
 
         <div className="grid grid-cols-12 gap-[30px]">
-          {/* <Suspense fallback={<BlogSkeleton />}> */}
 
             {
 
@@ -67,11 +63,7 @@ const Blog = () => {
             })
 
             }
-          {/* </Suspense> */}
-        </div>
-        
-        {/* <BlogSkeleton/> */}
-                
+        </div>                
 
       </div>
     </section>

@@ -3,7 +3,6 @@ import { Suspense, useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
 import BlogSkeleton from "../blogComponent/BlogSkeleton";
 import axios from "axios";
-import { revalidatePath } from 'next/cache'
 
 
 const Service = () => {
@@ -26,7 +25,6 @@ const Service = () => {
   })()
 
   }, []);
-  revalidatePath('/services')
 
 
   return (
