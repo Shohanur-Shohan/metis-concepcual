@@ -8,6 +8,8 @@ import BlogSkeleton from "./BlogSkeleton";
 
 const Blog = () => {
 
+  // console.log(blogs);
+
   const [blogs, setBlogs] = useState();
 
 
@@ -27,8 +29,7 @@ const Blog = () => {
   })()
 
   }, []);
-  // console.log(blogs);
-  // export const revalidate = 0;
+  console.log(blogs);
   
 
   return (
@@ -69,5 +70,6 @@ const Blog = () => {
     </section>
   );
 };
+
 
 export default Blog;

@@ -17,7 +17,7 @@ const DashboardBlogs = () => {
   (async ()=>{
   
     try {
-      let res = await axios.get("/api/dashboard/blog/all");
+      let res = await axios.get("/api/dashboard/blog/all", { cache: 'no-store' });
       // console.log(res);
       setBlogs(res?.data);
     } catch (error) {

@@ -13,7 +13,7 @@ const DashboardServices = () => {
   (async ()=>{
   
     try {
-      let res = await axios.get("/api/dashboard/service/all");
+      let res = await axios.get("/api/dashboard/service/all", { cache: 'no-store' });
       // console.log(res);
       setService(res?.data);
     } catch (error) {
