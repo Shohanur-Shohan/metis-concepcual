@@ -1,25 +1,18 @@
-import { VerifyToken } from "@/utility/JwtTokenHelper";
+
 import { NextResponse } from "next/server";
 
-export async function middleware(req, res){
-
-    if(req.nextUrl.pathname.startsWith("/dashboard")){
-    
+export async function middleware(req, res) {
+    if (req.nextUrl.pathname.startsWith("/dashboard")) {
         try {
             let token = req.cookies.get("token");
             // console.log("Token", token);
-            let payload = await VerifyToken(token["value"]);
-            // console.log("Payload", payload);
+            if(token === undefined){
+                return NextResponse.redirect(new URL("/login", req.url));
+            }
+            else{
+                return NextResponse.next();
 
-            const requestHeader = new Headers(req.headers);
-            requestHeader.set("email", payload["email"]);
-            requestHeader.set("id", payload["id"]);
-
-            // console.log(requestHeader);
-
-            return NextResponse.next({
-                request: { headers: requestHeader },
-            });
+            }
 
         } catch (error) {
             return NextResponse.redirect(new URL("/login", req.url));
@@ -27,4 +20,6 @@ export async function middleware(req, res){
 
     }
 
+    // Continue with the normal flow if the pathname doesn't start with "/dashboard"
+    return NextResponse.next();
 }
