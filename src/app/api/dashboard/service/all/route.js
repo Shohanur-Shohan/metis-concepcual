@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { revalidatePath } from "next/cache";
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
@@ -9,6 +10,11 @@ export async function GET(req, res){
         const prisma = new PrismaClient();
 
         const result = await prisma.service.findMany();
+
+        
+        //revalidatePath
+        const path = req.next.nextUrl.pathname
+        revalidatePath(path)
 
         return NextResponse.json({status: "success",data: result });
     }
