@@ -1,6 +1,4 @@
-// "use client"
-// import axios from "axios";
-// import { Suspense, useEffect, useState } from "react";
+
 import MemberCard from "./MemberCard";
 import { getData } from "@/utility/api/AllApi";
 import { Suspense } from "react";
@@ -10,33 +8,8 @@ import MemberSkeleton from "./MemberSkeleton";
 
 const Team = async () => {
 
-
-  // const [member, setMember] = useState();
-
-
-  // useEffect(()=>{
-  
-  // (async ()=>{
-  
-  //   try {
-  //     let res = await axios.put("/api/dashboard/member/all", { cache: 'no-store' });
-  //     setMember(res?.data);
-  //     // console.log(res?.data);
-  //   } catch (error) {
-  //     console.log("Error fetching member", error.toString());
-  //   }
-    
-  
-  // } )()
-
-  // }, [])
-
-
-  // console.log(member);
-  // console.log(member?.status);
-
   const res = await getData();
-  // console.log(res);
+
 
   return (
     <section className="py-20">
