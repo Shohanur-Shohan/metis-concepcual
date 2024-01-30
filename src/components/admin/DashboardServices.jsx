@@ -1,28 +1,9 @@
-"use client"
-import { useEffect, useState } from "react";
+import { getServiceData } from "@/utility/api/AllApi";
 import DashboardServiceCard from "./DashboardServiceCard";
-import axios from "axios";
 
-const DashboardServices = () => {
-
-    const [ service, setService] = useState();
-
-
-  useEffect(()=>{
+const DashboardServices = async () => {
   
-  (async ()=>{
-  
-    try {
-      let res = await axios.get("/api/dashboard/service/all", { cache: 'no-store' });
-      // console.log(res);
-      setService(res?.data);
-    } catch (error) {
-      console.log("blog fetch error", error);
-    } 
-  
-  })()
-
-  }, []);
+  const service = await getServiceData();
 
     return (
     <div className='flex justify-center h-[fit-content] pt-10'>

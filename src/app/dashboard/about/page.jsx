@@ -9,6 +9,7 @@ const getData = async ()=>{
     return res;
 }
 
+export const dynamic = 'force-dynamic'
 
 const page = async () => {
       const data = await  getData();

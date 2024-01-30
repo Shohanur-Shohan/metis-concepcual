@@ -1,32 +1,13 @@
-"use client"
 
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { Suspense } from "react";
 import DashboardBlogCard from "../blogComponent/DashboardBlogCard";
 import BlogSkeleton from "../blogComponent/BlogSkeleton";
+import { getUserData } from "@/utility/api/AllApi";
 
 
-const DashboardBlogs = () => {
+const DashboardBlogs = async () => {
 
-  const [blogs, setBlogs] = useState();
-
-
-  useEffect(()=>{
-  
-  (async ()=>{
-  
-    try {
-      let res = await axios.get("/api/dashboard/blog/all", { cache: 'no-store' });
-      // console.log(res);
-      setBlogs(res?.data);
-    } catch (error) {
-      console.log("blog fetch error", error);
-    } 
-  
-  })()
-
-  }, []);
+  const blogs = await getUserData();
 
 
     
@@ -40,22 +21,22 @@ const DashboardBlogs = () => {
         
           {/* <!-- Grid --> */}
           <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+            <Suspense fallback={ <BlogSkeleton />}>
 
-            {
+              {
 
               blogs?.data.map((item, id)=>{
   
               return(
   
-                <Suspense key={id}  fallback={<BlogSkeleton />}>
                   <DashboardBlogCard key={id} item={item}/>
-                </Suspense>
               )
   
               })
   
               }
-       
+              
+            </Suspense>
           </div>
           {/* <!-- End Grid --> */}
         

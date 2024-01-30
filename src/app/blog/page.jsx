@@ -3,6 +3,8 @@ import NavBar from "@/components/Navbar";
 import Newsletter from "@/components/Newsletter";
 import Blog from "@/components/blogComponent/Blog";
 
+export const dynamic = 'force-dynamic'
+
 const page = () => {
     return (
         <div>

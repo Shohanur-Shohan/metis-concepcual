@@ -1,20 +1,13 @@
-
 import UsersListsDashboard from "@/components/admin/UsersListsDashboard";
-import { PrismaClient } from "@prisma/client";
+import { getUserData } from "@/utility/api/AllApi";
 
 
-async function getData(){
-    const prisma = new PrismaClient();
-    const result = await prisma.user.findMany({
-        orderBy: {id : 'asc'},
-    });
-    return result;
-}
+export const dynamic = 'force-dynamic'
 
 const page = async () => {
 
-    const data = await getData();
-    // console.log(data);
+    const data = await getUserData();
+    // console.log("get user data", data);
 
     return (
         <div>
