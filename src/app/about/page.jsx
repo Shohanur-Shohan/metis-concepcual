@@ -5,6 +5,8 @@ import NavBar from "@/components/Navbar";
 // import Counter from "@/components/aboutComponent/Counter";
 import Team from "@/components/aboutComponent/Team";
 
+export const dynamic = 'force-dynamic'
+
 const page = () => {
     return (
         <div>

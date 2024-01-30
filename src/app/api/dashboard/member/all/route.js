@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-export async function PUT(req, res){
+export async function GET(req, res){
 
     try{
 
