@@ -38,11 +38,9 @@ const UsersListsDashboard = async (props) => {
                 </thead>
                 <tbody>
 
-                {
-
+                {              
                 
-                
-                userData.map((item, id)=>{
+                userData?.data.map((item, id)=>{
 
                     //remove timezone
                     let createdAt = item?.createdAt;                   
@@ -59,21 +57,21 @@ const UsersListsDashboard = async (props) => {
                             <div className="flex items-center gap-3">
                                 <Image className="relative inline-block object-contain object-center w-12 h-12 p-1 border rounded-full border-blue-gray-50 bg-blue-gray-50/50" width={100} height={100} src={'/images/unknown.jpg'} alt="profile"/>
                             </div>
-                            </td>
-                            <td className="p-4 border-b border-blue-gray-50">
+                        </td>
+                        <td className="p-4 border-b border-blue-gray-50">
                             <p className="block font-sans text-sm antialiased font-bold leading-normal text-blue-gray-900">{item?.firstName + ' ' + item?.lastName}</p>
-                            </td>
-                            <td className="p-4 border-b border-blue-gray-50">
+                        </td>
+                        <td className="p-4 border-b border-blue-gray-50">
                             <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">{item?.email}</p>
-                            </td>
-                            <td className="p-4 border-b border-blue-gray-50">
-                                <div className="w-max">
-                                    <div className="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 rounded-md select-none whitespace-nowrap bg-green-500/20" >
-                                    <span className="">{item?.password}</span>
-                                    </div>
+                        </td>
+                        <td className="p-4 border-b border-blue-gray-50">
+                            <div className="w-max">
+                                <div className="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 rounded-md select-none whitespace-nowrap bg-green-500/20" >
+                                <span className="">{item?.password}</span>
                                 </div>
-                            </td>
-                            <td className="p-4 border-b border-blue-gray-50">
+                            </div>
+                        </td>
+                        <td className="p-4 border-b border-blue-gray-50">
                             <div className="flex items-center gap-3">
                                 <div className="flex flex-col">
                                 <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">{removeTimezone()}</p>
@@ -118,9 +116,8 @@ const UsersListsDashboard = async (props) => {
                     )
                 
                 })
-                }
-               
 
+                }
 
                 </tbody>
             </table>

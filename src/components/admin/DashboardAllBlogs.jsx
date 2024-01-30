@@ -2,13 +2,13 @@
 import { Suspense } from "react";
 import DashboardBlogCard from "../blogComponent/DashboardBlogCard";
 import BlogSkeleton from "../blogComponent/BlogSkeleton";
-import { getUserData } from "@/utility/api/AllApi";
+import { getBlogData } from "@/utility/api/AllApi";
 
 
 const DashboardBlogs = async () => {
 
-  const blogs = await getUserData();
-
+  const blogs = await getBlogData();
+  // console.log(blogs);
 
     
     return (
