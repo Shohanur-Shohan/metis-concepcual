@@ -1,9 +1,8 @@
 import { PrismaClient } from "@prisma/client";
-// import { revalidatePath } from "next/cache";
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-export async function GET(req, res){
+export async function PUT(req, res){
 
     try{
 

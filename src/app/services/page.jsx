@@ -5,6 +5,9 @@ import Newsletter from "@/components/Newsletter";
 import Price from "@/components/serviceComponent/Price";
 import Service from "@/components/serviceComponent/Service";
 
+
+export const dynamic = 'force-dynamic'
+
 const page = () => {
     return (
         <div>

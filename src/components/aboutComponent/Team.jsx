@@ -1,37 +1,42 @@
-"use client"
-import axios from "axios";
-import { Suspense, useEffect, useState } from "react";
+// "use client"
+// import axios from "axios";
+// import { Suspense, useEffect, useState } from "react";
 import MemberCard from "./MemberCard";
+import { getData } from "@/utility/api/AllApi";
+import { Suspense } from "react";
 import MemberSkeleton from "./MemberSkeleton";
 
 
 
-const Team = () => {
+const Team = async () => {
 
-  const [member, setMember] = useState();
 
-  useEffect(()=>{
+  // const [member, setMember] = useState();
+
+
+  // useEffect(()=>{
   
-  (async ()=>{
+  // (async ()=>{
   
-    try {
-      let res = await axios.get("/api/dashboard/member/all", { cache: 'no-store' });
-      setMember(res?.data);
-      // console.log(res?.data);
-    } catch (error) {
-      console.log("Error fetching member", error.toString());
-    }
+  //   try {
+  //     let res = await axios.put("/api/dashboard/member/all", { cache: 'no-store' });
+  //     setMember(res?.data);
+  //     // console.log(res?.data);
+  //   } catch (error) {
+  //     console.log("Error fetching member", error.toString());
+  //   }
     
   
-  } )()
+  // } )()
 
-  }, [])
+  // }, [])
 
 
   // console.log(member);
   // console.log(member?.status);
 
-
+  const res = await getData();
+  // console.log(res);
 
   return (
     <section className="py-20">
@@ -48,27 +53,31 @@ const Team = () => {
             eget justo et iaculis.
           </p>
         </div>
-        <div className="flex flex-wrap">
-
-          {/* member */}     
-            {
+        {/* <div className="flex flex-wrap"> */}
             
-            member?.data.map((item, id)=>{
-
-              return(
-
-                <Suspense key={id} fallback={ <MemberSkeleton/> }>
-                  <MemberCard key={id} item={item}/> 
-                </Suspense>
-
-              )
-           
-            })
             
-            }    
-          {/* member */}
+            <Suspense fallback={ <MemberSkeleton/> }>
+              {
+              
+              res?.status === "success" ? 
+                <div className="flex flex-wrap">
+                  {
+                    res?.data.map((item, id)=>{
+              
+                      return(
+                        <MemberCard key={id} item={item}/>   
+                      )
+                    
+                    })
+                  }
+                </div>
+              :
+              <MemberSkeleton/>
+              
+              }
+            </Suspense>           
+        {/* </div> */}
 
-        </div>
       </div>
     </section>
   );

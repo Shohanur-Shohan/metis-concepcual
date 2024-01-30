@@ -10,6 +10,7 @@ export async function middleware(req, res) {
                 return NextResponse.redirect(new URL("/login", req.url));
             }
             else{
+                // res.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
                 return NextResponse.next();
 
             }
