@@ -5,7 +5,7 @@ export async function getData() {
           headers: {
               // Add any headers if needed
           },
-          // Set caching and revalidation options
+          //S et caching and revalidation options
           next: { revalidate: 0 },
           caches: 'no-store',
       });
